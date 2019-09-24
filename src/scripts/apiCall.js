@@ -1,6 +1,6 @@
 class Client {
     constructor () {
-        this.token = "4a510e0d"
+        this.token = "4a510e0d";
     }
 
     async getMovieData(movie) {
