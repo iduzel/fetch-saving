@@ -4,7 +4,7 @@ class Client {
     }
 
     async getMovieData(movie) {
-        let response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${this.token}&${movie}`);
+        let response = await fetch(`http://www.omdbapi.com/?t=${movie}&apikey=${this.token}`);
         let data = await response.json();
         return data;
     }
