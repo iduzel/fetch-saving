@@ -37,7 +37,7 @@
 }
 .movie-meta {
     border-bottom: 1px solid black;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
 }
 
 .buttons {
@@ -53,16 +53,14 @@
 	font: inherit;
 	cursor: pointer;
     outline: inherit;
-    margin: 1rem 0.5rem 0 0.5rem;
-}
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 5px #303030;
+    }
 
-.btn-save:hover, .btn-reset:hover {
-    transform: scale(1.1);
-    box-shadow: 5px 5px 5px #303030;
+    &:active {
+        transform: scale(0.9);
+        box-shadow: none;
+    }
 }
-
-.btn-save:active, .btn-reset:active {
-    transform: scale(0.9);
-    box-shadow: none;
-}
-
