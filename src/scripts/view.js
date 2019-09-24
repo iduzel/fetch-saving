@@ -12,6 +12,7 @@ class View {
                     <h2>${data.Title}</h2>
                     <p>Release date: ${data.Released}</p>
                     <p>Run time: ${data.Runtime}</p>
+                    <p>Rated: ${data.Rated}</p>
                 </section>
                 <p>${data.Plot}</p>
             </section>`)
