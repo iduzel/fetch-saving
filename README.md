@@ -10,6 +10,9 @@ Create a movie list by populating movies on the page.
 * The user should be able to save their movie list so that when the page is refreshed, their movie list will still be displayed. 
 * The user should be able to reset the page - this means that the movie list should be removed entirely from the page and nothing should appear if the page is refreshed. 
 
+**Notes**
+* Important: use the following API for this exercise: https://www.omdbapi.com/
+
 **Images**
 * Empty Movie List
 ![alt text](images/empty-page.png "Reset")
