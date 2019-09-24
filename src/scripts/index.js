@@ -1,4 +1,3 @@
-// The following line makes sure your styles are included in the project. Don't remove this.
 import '../styles/main.scss';
 import 'babel-polyfill';
 
@@ -21,14 +20,16 @@ class Movies {
                 this.view.displayMovieOnPage(data);
         })
     }
-    enterMovie() {
+
+    searchMovie() {
         this.inputMovie.addEventListener("keydown", (e) => {
             let match = 0;
-            for (let i = 0; i < this.movies.length; i++) {
-                if (this.inputMovie.value === this.movies[i]) {
+            this.movies.map(movie => {
+                if (this.inputMovie.value === movie) {
                     match++;
                 }
-            }
+            })
+
             if ((e.keyCode === 13) && (this.inputMovie.value.length > 0) && (match === 0)) {
                 this.getMovie(this.inputMovie.value);
                 this.movies.push(this.inputMovie.value);
@@ -39,6 +40,7 @@ class Movies {
             }
         })
     }
+
     saveMovies() {
         document.querySelector(".container").addEventListener("click", (e) => {
             switch (e.target.className) {
@@ -48,21 +50,24 @@ class Movies {
                 case "btn-reset":
                     window.localStorage.removeItem('savedMovies');
                     this.view.removeDisplay();
+                    this.movies = [];
                     break;
             }
         })
     }
+
     getStorage() {
         this.storedMovies = JSON.parse(window.localStorage.getItem("savedMovies"));
         if (this.storedMovies.length > 0) {
             this.storedMovies.map(movie => {
+                this.movies.push(movie);
                 this.getMovie(movie);
             })
         }
     }
 
     init() {
-        this.enterMovie();
+        this.searchMovie();
         this.saveMovies();
         this.getStorage();
     }
