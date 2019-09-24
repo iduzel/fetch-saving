@@ -17,6 +17,10 @@ class View {
             </section>`)
         }
     }
+    removeDisplay() {
+        this.moviesSection.innerHTML = "";
+    }
+
 }
 
 export {View};
