@@ -58,12 +58,10 @@ class Movies {
 
     getStorage() {
         this.storedMovies = JSON.parse(window.localStorage.getItem("savedMovies"));
-        if (this.storedMovies.length > 0) {
-            this.storedMovies.map(movie => {
-                this.movies.push(movie);
-                this.getMovie(movie);
-            })
-        }
+        this.storedMovies.map(movie => {
+            this.movies.push(movie);
+            this.getMovie(movie);
+        })
     }
 
     init() {
