@@ -2,10 +2,47 @@
     font-size: 2rem;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+}
+
+.title {
+    margin: 2rem;
+}
+
+.movie-input {
+    height: 1rem;
+    font-size: 1rem;
+}
+
+.movies {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.movie-display {
+    width: 15rem;
+    border: 1px solid black;
+    padding: 1rem;
+    margin: 1rem;
+}
+.movie-meta {
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.btn-save {
+    background-color: none;
+    margin: 1rem;
+    font-size: 1.5rem;
 }
 
