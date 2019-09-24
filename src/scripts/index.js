@@ -1,24 +1,35 @@
 // The following line makes sure your styles are included in the project. Don't remove this.
 import '../styles/main.scss';
 import 'babel-polyfill';
-// Import any additional modules you want to include below \/
+
 import {Client} from "../scripts/apiCall.js"
+import {View} from "../scripts/view.js"
 
 class Movies {
     constructor() {
-        this.movies = ["amsterdam", "paris"]
         this.client = new Client();
+        this.inputMovie = document.getElementById("input");
+        this.view = new View ();
+        this.movies = []
     }
 
-    displayMovie() {
-        this.client.getMovieData("love and other drugs").then(data => {
-            console.log(data);
+    getMovie(movie) {
+        this.client.getMovieData(movie).then(data => {
+            console.log(data), 
+            this.view.displayMovieOnPage(data);
+        })
+    }
+    enterMovie() {
+        this.inputMovie.addEventListener("keydown", (e) => {
+            if ((e.keyCode === 13) && this.inputMovie.value.length > 0) {
+                this.getMovie(this.inputMovie.value);
+                this.inputMovie.value = "";
+            }
         })
     }
 
 }
 
 let movies = new Movies();
-movies.displayMovie();
-// \/ All of your javascript should go here \/
+movies.enterMovie();
 
